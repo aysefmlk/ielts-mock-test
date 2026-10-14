@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Writing, IELTS Academic Mock Test 1</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">IELTS Mock Test <span class="badge">Writing</span></div>
+  <div class="spacer"></div>
+  <div class="candidate" id="wc-top">0 words</div>
+  <div class="timer" id="timer">60:00</div>
+  <button class="btn ghost" id="btn-start">Start test</button>
+  <a class="btn ghost" href="index.html">Exit</a>
+</header>
+
+<main class="wrap">
+  <div class="tabs" id="tabs"></div>
+  <div class="split">
+    <div id="brief"></div>
+    <div id="answer"></div>
+  </div>
+
+  <div class="panel" style="margin-top:22px">
+    <h2 style="margin-top:0">Self-assessment</h2>
+    <p class="small">Writing cannot be marked automatically with any honesty. Read your two answers against the four official criteria and give each a band from 4 to 9. Be strict: compare what you wrote against the descriptors, not against how hard it felt.</p>
+    <div id="rubric"></div>
+    <div style="margin-top:16px">
+      <button class="btn" id="save">Save my Writing band</button>
+      <button class="btn outline" id="download">Download my answers</button>
+      <a class="btn outline" href="speaking.html">Continue to Speaking</a>
+    </div>
+    <p class="small" id="saved"></p>
+  </div>
+</main>
+
+<script src="js/engine.js"></script>
+<script src="data/writing-speaking.js"></script>
+<script src="js/writing-page.js"></script>
+</body>
+</html>

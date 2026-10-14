@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IELTS Academic Mock Test 1</title>
+<meta name="description" content="A full IELTS Academic mock test in the British Council computer-delivered format: Listening, Reading, Writing and Speaking, with timers and instant marking.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">IELTS Mock Test <span class="badge">Academic</span></div>
+  <div class="spacer"></div>
+  <a class="btn ghost" href="results.html">My results</a>
+</header>
+
+<section class="hero">
+  <div class="inner">
+    <h1>Full IELTS Academic practice test</h1>
+    <p>Four modules in the official order, timed exactly as in the computer-delivered test. Listening and Reading are marked instantly and converted to a band score using the published conversion tables. Writing and Speaking are self-assessed against the official criteria.</p>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>1. Listening <span class="pill" id="pill-listening">Not started</span></h3>
+      <div class="meta">4 parts &middot; 40 questions &middot; 30 min audio + 10 min transfer</div>
+      <p>A conversation, a talk, a student discussion and a lecture. Audio plays through the built-in reader, with full transcripts released after you submit.</p>
+      <a class="btn" href="listening.html">Start Listening</a>
+    </div>
+
+    <div class="card">
+      <h3>2. Reading <span class="pill" id="pill-reading">Not started</span></h3>
+      <div class="meta">3 passages &middot; 40 questions &middot; 60 minutes</div>
+      <p>Three academic passages with True/False/Not Given, matching headings, summary completion and multiple choice. No extra transfer time, as in the real test.</p>
+      <a class="btn" href="reading.html">Start Reading</a>
+    </div>
+
+    <div class="card">
+      <h3>3. Writing <span class="pill" id="pill-writing">Not started</span></h3>
+      <div class="meta">2 tasks &middot; 60 minutes &middot; 150 + 250 words</div>
+      <p>A data description and a discursive essay, with a live word counter, per-task timing and the official band descriptors for self-assessment.</p>
+      <a class="btn" href="writing.html">Start Writing</a>
+    </div>
+
+    <div class="card">
+      <h3>4. Speaking <span class="pill" id="pill-speaking">Not started</span></h3>
+      <div class="meta">3 parts &middot; 11 to 14 minutes</div>
+      <p>Interview, a one-minute cue card with preparation time, and a two-way discussion. Record yourself in the browser and play your answers back.</p>
+      <a class="btn" href="speaking.html">Start Speaking</a>
+    </div>
+
+  </div>
+
+  <div class="panel" style="margin-top:26px">
+    <h2 style="margin-top:0">Before you begin</h2>
+    <ul class="small" style="line-height:1.9">
+      <li><b>Sit the modules in order and without a break</b> if you want a realistic result. In the real test, Listening, Reading and Writing run back to back with no pause between them.</li>
+      <li><b>Spelling counts.</b> In Listening and Reading an answer with a spelling mistake is marked wrong. Both British and American spellings are accepted.</li>
+      <li><b>Respect the word limits.</b> "NO MORE THAN TWO WORDS" means an answer of three words scores zero even if the content is right.</li>
+      <li><b>Your work is saved in this browser</b> as you go, so you can close the tab and come back. Nothing is uploaded anywhere.</li>
+    </ul>
+    <div style="margin-top:14px">
+      <a class="btn outline" href="results.html">View score report</a>
+      <button class="btn outline" id="reset">Clear all my answers</button>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site">
+  An independent practice test built to the British Council computer-delivered IELTS format.
+  Not affiliated with, or endorsed by, the British Council, IDP or Cambridge Assessment English.
+</footer>
+
+<script src="js/engine.js"></script>
+<script>
+(function () {
+  ['listening','reading','writing','speaking'].forEach(function (m) {
+    var st = IELTS.moduleState(m);
+    var pill = document.getElementById('pill-' + m);
+    if (!st || !pill) return;
+    pill.classList.add('done');
+    if (typeof st.band === 'number') pill.textContent = 'Band ' + st.band.toFixed(1);
+    else if (st.done) pill.textContent = 'Completed';
+  });
+  document.getElementById('reset').onclick = function () {
+    if (confirm('This deletes every saved answer and score in this browser. Continue?')) {
+      IELTS.clearAll();
+      location.reload();
+    }
+  };
+})();
+</script>
+</body>
+</html>

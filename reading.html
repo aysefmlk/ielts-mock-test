@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reading, IELTS Academic Mock Test 1</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">IELTS Mock Test <span class="badge">Reading</span></div>
+  <div class="spacer"></div>
+  <div class="candidate">Answered <b id="answered-count">0 / 40</b></div>
+  <div class="timer" id="timer">60:00</div>
+  <button class="btn ghost" id="btn-start">Start test</button>
+  <a class="btn ghost" href="index.html">Exit</a>
+</header>
+
+<main class="wrap">
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="split">
+    <div id="passages" class="passage hl"></div>
+    <div id="paper"></div>
+  </div>
+
+  <div class="panel" id="results" style="display:none;margin-top:22px"></div>
+
+</main>
+
+<div class="navbar">
+  <div class="palette" id="palette"></div>
+  <button class="btn danger" id="submit">Submit answers</button>
+</div>
+
+<script src="js/engine.js"></script>
+<script src="data/reading.js"></script>
+<script src="js/reading-page.js"></script>
+</body>
+</html>
